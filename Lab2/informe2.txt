@@ -1,0 +1,36 @@
+Para poder usar laravel como un dominio entramos al directorio "C:\Windows\System32\drivers\etc" y abrimos como administradores el archivo de nomre "hosts" ver imagen: (Lab2/imagenes/img1.png - img3.png).
+
+Lo editamos de tal manera que gestorlaravel se encuentre en la pate inferior del documento, de esta manera será un nuevo dominio al cual podremos acceder, ver imagen: (Lab2/imagenes/img4.png).
+
+Pero por el momento nos redireccionará a la página de xamp (en mi caso) entonces vamos a modificar el archivo "C:\xamp\apache\conf\extra\httpd-vhosts.conf ", ver imagen: (Lab2/imagenes/img5.png).
+
+Ahora pasamos a crear las tablas que utilizaremos para poder hacer uso de registros, información personal, etc.
+
+Vamos a configurar el nomre de la aplicación y para ello volvemos a la consola y la ubicamos en ela carpeta del proyecto, usaremos el siguiente comando apra concretar el proceso, "php artisan app:name GestorImagenes" ver imagen: (Lab2/imagenes/img6.png)
+
+Para corroborar el cambio entraremos al archivo "app/Http/Controllers/HomeController.php" desde un editor de texto, en este caso sublime text que ya tenemos instalado. ver imagen: (Lab2/imagenes/img7.png)
+
+Ahora vamos a configurar el archivo "GestorImagenes/.env" para que quede como la imagen (Lab2/imagenes/img8.png)
+
+Definimos algunas de las acciones que podrá realizar el usuario como agregar imagenes, eliminarlas, crear albumes, asignarle imagenes, nombre de usuario, contraseña, correo electronico, etc. estos últimos ya son considerados por defecto en laravel.
+
+Vamos a renombrar el archivo de nombre "user.php" por "Usuario.php" y modificaremos las lineas 9, 18 y 25 ver imagen: (Lab2/imagenes/img9.png)
+
+Añadiremos un archivo al cual le pondremos de nombre "Album.php" en la carpeta "GestorImagenes/app", abrimos el archivo de nombre "Usuario.php" y copiamos todo el contenido para posteriormente pegarlo en el archivo "Album.php" pero le haremos modificaciones ver imagen (Lab2/imagenes/img10.png)
+
+Volveremos a hacer el procedimiento pero ahora creando un archivo de nombre "Fotos.php" y lo modificaremos ver imagen (Lab2/imagenes/img11.png)
+
+EJERCICIO: Configuración del archivo "Usuario.php" para que recepcione una pregunta y respuesta, en caso olvide su contraseña ver imagen: (Lab2/imagenes/img12.png)
+
+Creando controladores:
+Nos dirigimos a la carpeta "app/http/controllers" allí encontraremos una carpeta llamada "Auth", vamos a renombrarla por "Validacion", dentro de esta carpeta encontramos dos archivos asi que eliminaremos el que tiene por nombre "Password", y renombramos el archivo "AuthController.php" por "ValidacionController.php" y lo modificamos, ver imagen: (Lab2/imagenes/img13.png)
+
+EJERCICIO:
+Investigación acerca de la utilidad, caracteristicas y funcionalidad de un trait en PHP
+respuesta: Un trait es el que reduce las limitaciones propias de la herencia simple permitiendo que los desarrolladores reutilicen a voluntad conjuntos de métodos sobre varias clases independientes y pertenecientes a clases jerárquicas distintas.
+
+Copiamos el codigo de la declaracion "trait" a la cual accedemos poniendo el mouse encima de "AuthenticatesAndRegostersUsers” nos dará el link del archivo, ahora copiamos el código y lo pegamos en  vez del metodo "USE" ver imagen: (Lab2/imagenes/img14.png)
+
+Ubicamos el archivo "HomeController.php" y le modificamos el nombre por "InicioController.php", tambien modificamos el nombre de la clase "HomerController" por "InicioController", la funcion "index" será modificado por "getIndex" y el valor de retorno se modificará por "página de inicio validado" ver imagen: (Lab2/imagenes/img15.png)
+
+Ubicamos el archivo "WelcomeController.php" y le modificamos el nombre por "BienvenidaController.php", tambien modificamos el nombre de la clase "WelcomeController" por "BienvenidaController", la funcion "index" será modificado por "getIndex" y el valor de retorno se modificará por "bienvenido a la aplicación" ver imagen: (Lab2/imagenes/img16.png)

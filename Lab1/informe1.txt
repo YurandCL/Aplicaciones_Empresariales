@@ -1,0 +1,11 @@
+Hacemos la instalación de composer, nos dirigímos a su página de descargas e instalamos la versión más actual para windows (en mi caso), ver imagenes: (Lab1/imagenes/img1.png - img2.png)
+Ahora nos aseguramos de que la instalación se hizo de manera correcta, lo revisamos en el cmd ver imagen: (Lab1/imagenes/img3.png)
+
+Procedemos a hacer la instalación de un editor de texto, en este caso sera sublime text, para ello vamos a su página web y lo descargamos ver  imagen: (Lab1/imagenes/img4.png).
+Descargamos la versión portable para que se haga mas facíl el poder utilizar esta herramienta.
+
+Ahora procederemos a crear un nuevo proyecto, para lo cual usaremos nuevamente la linea de comandos, pero ubicados en la ruta "C:\xampp\htdocs" ver imagen: (Lab1/imagenes/img5.png)
+De esta manera el proceso de creación comenzará.
+Para asegurarnos que se creo el proyecto, podemos ir a la carpeta donde la creamos ver imagen: (Lab1/imagenes/img6.png)
+Para probar que funcionó realmente entraremos al navegador de nuestra preferencia y escribimos el link "gestorlaravel.com:8080" ver imagen: (Lab1/imagenes/img7.png)
+Con esto debemos ya tener terminado el proceso de instalación y creación de nuestro proyecto y las herramientas utilizadas.

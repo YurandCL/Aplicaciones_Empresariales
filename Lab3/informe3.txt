@@ -1,0 +1,5 @@
+Creación de controladores
+
+En la carpeta de nombre "Controllers crearemos los siguientes controladores "FotoController.php", "AlbumController.php" y "UsuarioController.php". ver imagen: (Lab3/imagenes/img1.png)
+
+Copiamos el contenido de "HomeController.php" a "FotoController.php"

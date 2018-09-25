@@ -1,12 +1,20 @@
 @extends('app')
 
 @section('content')
-@if(Session::has('csrf'))
+
+@if(Session::has('herror'))
 	<div class="alert alert-danger">
 		<strong>Whoops|</strong>Al parecer algo esta mal.<br><br>
-		{{Session::get('csrf')}}
+		{{Session::get('error')}}
 	</div>
 @endif
+@if(Session::has('actualizado'))
+	<div class="alert alert-danger">
+		<strong>Hecho!</strong>Cambios Realizados<br><br>
+		{{Session::get('actualizado')}}
+	</div>
+@endif
+
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">

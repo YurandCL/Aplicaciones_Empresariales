@@ -1,0 +1,15 @@
+Creamos una nueva carpeta dentro de la carpeta "views", esta nueva carpeta se llamará "usuario", dentro de esta carpeta creamos el archivo de nombre "actualizar.blade.php" al cual le copiaremos el código que se encuentra en el archivo "registro" ver imagen: (Lab5/imagenes/img1.png)
+
+ahora modificamos la funcion "getEditarPerfil()" la cual se encuentra en el archivo  "UsuarioController.php" ver imagen: (Lab5/imagenes/img2.png)
+
+modificamos el archivo "app.blade.php" para que nos muestre la opcion de editar perfil ver imagen: (Lab5/imagenes/img3.png)
+
+pasamos a modificar el archivo que creamos hace poco llamado (el campo del correo electronico no se visualiza porque no nos es útil en este archivo) "actualizar.blade.php" ver imagen (Lab5/imagenes/img4.png - img6.png)
+
+Creamos un nuevo request denominado "EditarPerfil" y para ello hacemos uso de la consola ver imagen: (Lab5/imagenes/img7.png)
+
+El archivo se creará en la ruta "/app/Http/Requests/", ahora que tenemos creado el archivo, vamos a editarlo ver imagen: (Lab5/imagenes/img8.png)
+
+Para poder usar este nuevo archivo en el proyecto lo importamos junto a la clase Auth en el archivo "UsuarioController.php" ver imagen (Lab5/imagenes/img9.png)
+
+Modificamos el metodo "postEditarPerfil(...)" para que la informacion sea actualizada totalmente ver imagen: (Lab5/imagenes/img10.png)

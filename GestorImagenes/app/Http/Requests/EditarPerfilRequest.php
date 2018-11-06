@@ -25,7 +25,7 @@ class EditarPerfilRequest extends Request {
 			'nombre' => 'required',
 			'password' => 'min.6|confirmed',
 			'pregunta' => '',
-			'respuesta' => 'required_with:pregunta'
+			'respuesta' => 'required_with:pregunta',
 		];
 	}
 

@@ -18,15 +18,19 @@ class UsuarioController extends Controller {
 	{
 		return view('usuario.actualizar');
 	}
-	public function postEditarPerfil(){
-		$usuario = Auth::user();
-		$nombre = $request->get('nombre');
-		$usuario->nombre=$nombre;
+	public function postEditarPerfil(EditarPerfilRequest $request){
 
-		if ($request -> has('password')) {
+
+		$usuario=Auth::user();
+		$nombre=$request->get('nombre');
+		$usuario->nombre=$nombre;
+		//print_r($usuario);
+		if ($request->has('password')) {
+			echo "asdfasd";
 			$usuario->password=bcrypt($request->get('password'));
 		}
 		if ($request->has('pregunta')) {
+			echo "asdfasdasdasda";
 			$usuario->pregunta=$request->get('pregunta');
 			$usuario->respuesta=$request->get('respuesta');
 		}

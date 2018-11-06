@@ -1,6 +1,6 @@
 <?php namespace GestorImagenes\Services;
 
-use GestorImagenes\User;
+use GestorImagenes\Ususario;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
@@ -31,8 +31,8 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		return User::create([
-			'name' => $data['name'],
+		return Ususario::create([
+			'nombre' => $data['nombre'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
 			'pregunta' => $data['pregunta'],

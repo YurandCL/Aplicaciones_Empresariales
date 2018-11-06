@@ -2,16 +2,10 @@
 
 @section('content')
 
-@if(Session::has('herror'))
+@if(Session::has('error'))
 	<div class="alert alert-danger">
 		<strong>Whoops|</strong>Al parecer algo esta mal.<br><br>
 		{{Session::get('error')}}
-	</div>
-@endif
-@if(Session::has('actualizado'))
-	<div class="alert alert-danger">
-		<strong>Hecho!</strong>Cambios Realizados<br><br>
-		{{Session::get('actualizado')}}
 	</div>
 @endif
 

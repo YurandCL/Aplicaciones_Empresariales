@@ -161,7 +161,7 @@ class ValidacionController extends Controller {
 		 */
 		public function loginPath()
 		{
-			return property_exists($this, 'loginPath') ? $this->loginPath : '/Validacion/inicio';
+			return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/inicio';
 		}
 		public function getRecuperar(){
 			return view('validacion.recuperar');
@@ -169,10 +169,7 @@ class ValidacionController extends Controller {
 		public function postRecuperar(){
 			return 'recuperando contraseña';
 		}
-		
-
-	
-	public function missingMethod($parameters=array()){
+		public function missingMethod($parameters=array()){
 		abort(404);
 		}
 

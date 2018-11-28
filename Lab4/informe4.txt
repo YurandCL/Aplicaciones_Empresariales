@@ -1,0 +1,17 @@
+Creamos nuestros modelos de nuestra base de datos para nuestro royecto, para ello creamos nuestros archivos de migración, entonces entramos a la ruta de nuestro proyecto y digitamos "cmd" ver imagenes (Lab4/imagenes/img1.png - img3.png)
+
+repetimos el mismo proceso para crear ahora la tabla fotos, solo debemos modificar los campos que digan "album" o "Albmues" por "foto" o "Fotos" segun sea conveniente.
+
+Ahora vamos a verificar que efectivamente se hayan creado, para ello iremos a nuestro proyecto en el sublime text y buscamos los archivos que deben estar en la ruta "database/migrations/" ver imagen (Lab4/imagenes/img4.png).
+
+Seguramente tenremos el archivo "create_password_resets_table.php" este archivo es la manera como laravel trabaja sus recuperaciones de cuentas, pero como nosotros lo haremos de otra forma no sirve, pasaremos a borrarlo.
+
+Como vemos ya contamos con un archivo el cual creará nuestra tabla de usuarios, vamos a modificarlo para agregar algunos campos y hacer otras modificaciones, ver imagen (Lab4/imagenes/img5.png).
+
+Ahora vamos a modificar nuestro archivo "CrearTablaAlbumes" de tal forma que nos quede así: ver imagen (Lab4/imagenes/img6.png).
+
+Así mismo vamos a modificar el archivo "CrearTablaFotos" de la siguiente manera, ver imagen (Lab4/imagenes/img7.png).
+
+Para que estos archivos nos den creen nuestra base de datos de manera automatica entonces iremos nuevamente al cmd con la ruta de nuestro proyecto, y usaremos el siguiente comando, ver imagen (Lab4/imagenes/img8.png).
+
+ahora verificamos que nos muestre nuestras tablas en la base de datos entonces entramos phpmyadmin en nuestro navegador de internet (google chrome, mozilla firefox, internet explorer, etc), para ello nuestros servicios deben estar ativos para poder ingresar a nuestra base de datos de esta manera. ver imagen (Lab4/imagenes/img9.png).

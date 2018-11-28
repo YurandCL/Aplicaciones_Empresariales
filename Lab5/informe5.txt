@@ -13,3 +13,33 @@ El archivo se creará en la ruta "/app/Http/Requests/", ahora que tenemos creado 
 Para poder usar este nuevo archivo en el proyecto lo importamos junto a la clase Auth en el archivo "UsuarioController.php" ver imagen (Lab5/imagenes/img9.png)
 
 Modificamos el metodo "postEditarPerfil(...)" para que la informacion sea actualizada totalmente ver imagen: (Lab5/imagenes/img10.png)
+
+Ahora cuando hacemos redirecciones, se envía un mensaje con el contenido de: "Su perfil ha ido actualizado".
+
+Modificamos el archivo "resources/views/inicio.blade.php" y le agregamos una condicional para saber el estado de actualizado de la información. ver imagen (Lab5/imagenes/img11	 .png)
+
+Revisamos que los cambios se realizen sin errores y nos muestre el mensaje para asegurarnos dicha operación. ver imagen (Lab5/imagenes/img12.png)
+
+Ahora creamos el control para la creación de nuestros albumes.
+
+Abrimos el archivo "AlbumController" le añadiremos la importacion "Auth" con la cual obtendremos los datos del usuario logeado y modificamos la funcion "getIndex( )" de la siguiente manera ver imagen (Lab5/imagenes/img13.png)
+
+Ahora para que el usuario pueda entrar a esta vista debemos darle un enlace, por lo cual iremos a nuestro archivo "resources/views/app.blade.php" y lo modificamos de la siguiente manera ver imagen (Lab5/imagenes/img14.png)
+
+Para que esta funcionalidad nos sirva debemos crear nuestra vista de albumes, por lo tanto nos dirigimos a la carpeta "resources/views" y dentro de esta última creamos una nueva carpeta llamada "albumes", ahora dentro de esta nueva carpeta creamo un archivo llamado "mostrar.blade.php" y le daremos el código ver imágenes (Lab5/imagenes/img15.png - img16.png)
+
+Ya podemos entrar a probar nuestra aplicacion para que nos muestre nuestros albumes ver imagen (Lab5/imagenes/img17.png)
+
+Vamos a hacer ahora que nuestras fotos tambien se puedan mostrar, y para ello haremos lo siguiente, crearemos un nuevo "Request" que tendrá por nombre "MostrarFotosRquest" para ello veremos como referencia la siguiente imagen (Lab5/imagenes/img7.png), en la cual se detallan los pasos a seguir.
+
+En el archivo "FotoController" vamos a referenciar al request que acabamos de crear, al modelo de Album y Foto ver imagen (Lab5/imagenes/img18.png).
+
+En el Request vamos a configurar segun la siguiente imagen (Lab5/imagenes/img19.png).
+
+Vamos a modificar el archivo "FotoController" para que nos pueda redirigir a la vista de las fotos, ver imágenes(Lab5/imagenes/img20.png - img21.png).
+
+Pero para que nos pueda redirigir a una vista necesitamos tenerla, por lo tanto debemos crearla de la siguiente manera ver imagen (Lab5/imagenes/img22.png)
+
+Para no volver a digitar todo el código de nuevo copiaremos el que ya tenemos en el archivo "resources/views/albumes/mostrar.blade.php" y le cambiaremos algunas cosas, ver imagen (Lab5/imagenes/img23.png)
+
+Pasamos a verificar que efectivamente nos muestre nuestras fotos que están en nuestros albumes. ver imagen (Lab5/imagenes/img24.png)

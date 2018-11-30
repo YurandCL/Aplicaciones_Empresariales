@@ -3,9 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-use GestorImagenes\Album;
-use GestorImagenes\Foto;
-use GestorImagenes\Usuario;
+use GestorImagenes2\Album;
+use GestorImagenes2\Foto;
+use GestorImagenes2\Usuario;
 
 class AlbumesSeeder extends Seeder {
 
@@ -19,20 +19,18 @@ class AlbumesSeeder extends Seeder {
 		$usuarios=Usuario::all();
 		$contador=0;
 		foreach ($usuarios as $usuario) {
-			# code...
 			$cantidad=mt_rand(0,15);
-			for ($i=0; $i <$cantidad ; $i++) { 
-				# code...
+			for ($i=0; $i < $cantidad ; $i++) { 
 				$contador++;
 				Album::create(
 					[
 						'nombre' => "Nombre Album$contador",
-						'descripcion' => "Descripción álbum $contador",
-						'usuario_id' => $usuario -> id
-					]);
+						'descripcion' => "Descripcion album$contador",
+						'usuario_id' => $usuario->id
+					]
+				);
 			}
 		}
-		
 	}
 
 }

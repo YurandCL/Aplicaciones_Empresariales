@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Console\Commands;
+<?php namespace GestorImagenes2\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

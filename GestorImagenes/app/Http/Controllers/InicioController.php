@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http\Controllers;
+<?php namespace GestorImagenes2\Http\Controllers;
 
 class InicioController extends Controller {
 
@@ -32,6 +32,7 @@ class InicioController extends Controller {
 	{
 		return view('inicio');
 	}
+
 	public function missingMethod($parameters=array()){
 		abort(404);
 	}

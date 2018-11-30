@@ -9,7 +9,7 @@
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> Al parecer algo está mal.<br><br>
+							<strong>Whoops!</strong> Al parecer algo está mal. registro<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -36,19 +36,17 @@
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Confirmar su Contraseña</label>
+							<label class="col-md-4 control-label">Confirmar Contraseña</label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password_confirmation">
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label class="col-md-4 control-label">Pregunta</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="pregunta" value="{{ Auth::user()->pregunta }}">
 							</div>
 						</div>
-
 						<div class="form-group">
 							<label class="col-md-4 control-label">Respuesta</label>
 							<div class="col-md-6">

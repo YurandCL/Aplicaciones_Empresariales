@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http;
+<?php namespace GestorImagenes2\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'GestorImagenes\Http\Middleware\VerifyCsrfToken',
+		'GestorImagenes2\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'GestorImagenes\Http\Middleware\Authenticate',
+		'auth' => 'GestorImagenes2\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'GestorImagenes\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'GestorImagenes2\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

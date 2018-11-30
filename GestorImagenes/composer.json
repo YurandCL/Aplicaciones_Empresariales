@@ -16,7 +16,7 @@
 			"database"
 		],
 		"psr-4": {
-			"GestorImagenes\\": "app/"
+			"GestorImagenes2\\": "app/"
 		}
 	},
 	"autoload-dev": {

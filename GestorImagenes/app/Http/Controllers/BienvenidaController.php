@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http\Controllers;
+<?php namespace GestorImagenes2\Http\Controllers;
 
 class BienvenidaController extends Controller {
 

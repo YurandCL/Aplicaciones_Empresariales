@@ -14,4 +14,59 @@ Así mismo vamos a modificar el archivo "CrearTablaFotos" de la siguiente manera,
 
 Para que estos archivos nos den creen nuestra base de datos de manera automatica entonces iremos nuevamente al cmd con la ruta de nuestro proyecto, y usaremos el siguiente comando, ver imagen (Lab4/imagenes/img8.png).
 
-ahora verificamos que nos muestre nuestras tablas en la base de datos entonces entramos phpmyadmin en nuestro navegador de internet (google chrome, mozilla firefox, internet explorer, etc), para ello nuestros servicios deben estar ativos para poder ingresar a nuestra base de datos de esta manera. ver imagen (Lab4/imagenes/img9.png).
+Ahora verificamos que nos muestre nuestras tablas en la base de datos entonces entramos phpmyadmin en nuestro navegador de internet (google chrome, mozilla firefox, internet explorer, etc), para ello nuestros servicios deben estar ativos para poder ingresar a nuestra base de datos de esta manera. ver imagen (Lab4/imagenes/img9.png).
+
+Abriremos el archivo "GestorImagenes/database/seds/DatabaseSeeder.php" y pasamos a modficarlo de tal menarea que quede de a sguiente manera ver imagen (Lab4/imagenes/img10.png).
+
+Para poder hacer uso de nuestras tablas en nuestra aplicacion vamos a copiar el contenido de ese archivo en otros tres diferentes, en los cuales les pondremos por nombres "AlbumesSeeder", "FotosSeeder", "UsuariosSeeder" e ingresaremos datos a nuestras tablas con los nombres respectivos, ver imágenes (Lab4/imagenes/img11.png - img14.png).
+
+Volvemos a nuestro cmd con la ruta de nuestro proyecto y digitamos el iguiente comando para que se refresque o actualize el archivo en el que figuren los seeders, sus nombres y caracteristicas ver imagen (Lab4/imagenes/img11.png - img15.png).
+
+Ya que se actualizamos el archivo ahora vamos a ejecutar el comando "php artisan db:seed" para que nuestros seders creen registros en nuestra base de datos. ver imagen (Lab4/imagenes/img16.png).
+
+Ahora pasamos a modificar el archivo "app/Exceptions/Handler.php" y vamos a añadir nuestra importación ver imagen (Lab4/imagenes/img17.png).
+
+Para despues poder añadirle las siguientes lineas, en las cuales daremos errores de token y los renderizaremos (Lab4/imagenes/img18.png).
+
+Cambiaremos el archivo ".env" que se encuentra en la ruta "GestorImagenes/.env" y lo modificaremos de tal manera que quede de la siguiente manera. Ver imagen (Lab4/imagenes/img19.png).
+
+Vamos a asegurarnos que el error generado se de por el token y para ello nos dirigimos al archivo "/resources/views/validacion/inicio.blade.php" y modificamos como se ve en la siguiente imagen (Lab4/imagenes/img20.png).
+
+Ahora vemos que deberia de devolvernos al borrar el token al inspeccionar el elemento, ver imagen (Lab4/imagenes/img21.png).
+
+Probaremos una excepción en el inicio al momento de tratar de acceder a la aplicacion, en el primer caso el usuario no estará validado, asi que modificaremos el archivo "/resources/views/bienvenida.blade.php" ver imagen (Lab4/imagenes/img22.png).
+
+La siguiente forma que aparezca un error sera cuando el usuario si esté validado, asi que el error se generará en el inicio y no en la bienvenida, entonces modificaremos el archivo "/resources/views/inicio.blade.php" de la siguiente manera, ver imagen (Lab4/imagenes/img23.png).
+
+Si intentamos acceder con alguna credencial falsa, entonces no nos reconocerá y nos mostrará un error como el siguiente ver imagen (Lab4/imagenes/img24.png).
+
+Nos dirigimos al archivo "/app/Http/Controllers/Validacion/ValidacionController.php" y le importamos la opcion "Request" como se ve en la siguiente imagen (Lab4/imagenes/img25.png).
+
+Seguramente el usuario tambien quedrá cerrar su sesión, para ello tambien tenemos que configurar la funcionalidad, asi que en el mismo archivo buscamos la función "getSalida( )" y la configuramos como está a continuación ver imagen (Lab4/imagenes/img26.png).
+
+Para que el usuario pueda serrar su sesión de manera satisfactoria entonces debemos hacer el siguiente cambio ver imagen (Lab4/imagenes/img27.png).
+
+La manera de registrar a un nuevo usuario, lo que haremos es usar una variable de tipo "registrar" ver imagen (Lab4/imagenes/img28.png).
+
+También debemos hacer uso de la función "postRegistro" tal como se muestra en la siguiente imagen (Lab4/imagenes/img29.png).
+
+Ubicamos el la clase "Registrar" que estamos usando en la función "postRegistro( )" para poder modificarlo a nuestra conveniencia, para ello nos dirigiremos a la ruta "/app/Services/Registrar.php" y modificamos como está en la imagen, ver imagen (Lab4/imagenes/img30.png).
+
+Ahora vamos a cambiar otra funcion del archivo "Registrar.php" para que nos pueda coincidir la informacion, ver imagen (Lab4/imagenes/img31.png).
+
+Pasamos a modificar el archivo "/config/auth.php", esto lo hacemos para que laravel no utilice la tabla que tiene por defecto, sino la que nosotros ya creamos, ver imagen (Lab4/imagenes/img32.png).
+
+Para hacerlo mas personalizado el sistema, vamos a modificar el archivo "/resources/views/inicio.blade.php" de la siguiente manera, ver imagen (Lab4/imagenes/img33.png).
+
+Ahora podemos ingresar a nuestro sistema y verificar que efectivamente nos muestre el nombre del usuario, ver imagen (Lab4/imagenes/img34.png).
+
+Revisaremos que efectivamente podamos registrarnos ver imagenes (Lab4/imagenes/img35 - img37.png).
+
+Por el momento hemos terminado de arreglar el request de validacion y registro, ahor trabajaremos con lo que se refiere al inicio de sesion, para ello abrimos el archivo "ValidacionController" y buscamos la función "postInicio( )" y la modificaremos, ver imagen (Lab4/imagenes/img38.png).
+
+Crearemos un archivo de tipo "request" para el inicio de sesión, por lo tanto nos dirigimos a nuestra consola de comando y ejecutamos, ver imagen (Lab4/imagenes/img39.png).
+
+Verificamos que el archivo se haya creado satisfactoriamente, asi que nos dirigiremos a la ruta "/app/Http/Request/" alli dentro podremos ver si efectivamente se ha creado o no. Pasaremos a modificarlo de tal forma que nos quede de la siguiente manera, ver imagen (Lab4/imagenes/img40.png).
+
+Para que nuestro request funcione tiene que ser llamado por algun otro archivo, asi que volveremos al archivo "ValidacionController" y lo modificaremos de tal manera que quede de la siguiente manera, ver imagen (Lab4/imagenes/img41.png).
+

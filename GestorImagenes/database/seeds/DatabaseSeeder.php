@@ -3,9 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-use GestorImagenes\Album;
-use GestorImagenes\Foto;
-use GestorImagenes\Usuario;
+use GestorImagenes2\Album;
+use GestorImagenes2\Foto;
+use GestorImagenes2\Usuario;
 
 class DatabaseSeeder extends Seeder {
 
@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+
 		Foto::truncate();
 		Album::truncate();
 		Usuario::truncate();
@@ -24,8 +25,6 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UsuariosSeeder');
 		$this->call('AlbumesSeeder');
 		$this->call('FotosSeeder');
-
-		// $this->call('UserTableSeeder');
 	}
 
 }

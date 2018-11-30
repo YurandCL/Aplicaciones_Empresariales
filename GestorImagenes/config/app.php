@@ -139,11 +139,11 @@ return [
 		/*
 		 * Application Service Providers...
 		 */
-		'GestorImagenes\Providers\AppServiceProvider',
-		'GestorImagenes\Providers\BusServiceProvider',
-		'GestorImagenes\Providers\ConfigServiceProvider',
-		'GestorImagenes\Providers\EventServiceProvider',
-		'GestorImagenes\Providers\RouteServiceProvider',
+		'GestorImagenes2\Providers\AppServiceProvider',
+		'GestorImagenes2\Providers\BusServiceProvider',
+		'GestorImagenes2\Providers\ConfigServiceProvider',
+		'GestorImagenes2\Providers\EventServiceProvider',
+		'GestorImagenes2\Providers\RouteServiceProvider',
 
 	],
 

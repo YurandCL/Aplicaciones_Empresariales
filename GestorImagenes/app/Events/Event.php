@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Events;
+<?php namespace GestorImagenes2\Events;
 
 abstract class Event {
 

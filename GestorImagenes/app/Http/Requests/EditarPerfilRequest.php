@@ -1,6 +1,6 @@
-<?php namespace GestorImagenes\Http\Requests;
+<?php namespace GestorImagenes2\Http\Requests;
 
-use GestorImagenes\Http\Requests\Request;
+use GestorImagenes2\Http\Requests\Request;
 
 class EditarPerfilRequest extends Request {
 
@@ -23,7 +23,7 @@ class EditarPerfilRequest extends Request {
 	{
 		return [
 			'nombre' => 'required',
-			'password' => 'min.6|confirmed',
+			'password' => 'min:6|confirmed',
 			'pregunta' => '',
 			'respuesta' => 'required_with:pregunta',
 		];

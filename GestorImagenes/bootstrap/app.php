@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
-	'GestorImagenes\Http\Kernel'
+	'GestorImagenes2\Http\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Console\Kernel',
-	'GestorImagenes\Console\Kernel'
+	'GestorImagenes2\Console\Kernel'
 );
 
 $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
-	'GestorImagenes\Exceptions\Handler'
+	'GestorImagenes2\Exceptions\Handler'
 );
 
 /*

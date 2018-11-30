@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http\Requests;
+<?php namespace GestorImagenes2\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

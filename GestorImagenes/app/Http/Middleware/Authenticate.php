@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http\Middleware;
+<?php namespace GestorImagenes2\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -32,7 +32,7 @@ class Authenticate {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if ($this->auth->guest())
+		/*if ($this->auth->guest())
 		{
 			if ($request->ajax())
 			{
@@ -43,7 +43,7 @@ class Authenticate {
 				return redirect()->guest('validacion/inicio');
 			}
 		}
-
+*/
 		return $next($request);
 	}
 

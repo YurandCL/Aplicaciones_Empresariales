@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Exceptions;
+<?php namespace GestorImagenes2\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -42,13 +42,11 @@ class Handler extends ExceptionHandler {
 			return $this->renderHttpException($e);
 		}
 		if ($e instanceof TokenMismatchException) {
-			# code...
 			return redirect($request->url())->with('csrf', 'Al parecer pasó mucho tiempo, intenta de nuevo');
 		}
 		if (config('app.debug')) {
-			# code...
 			return parent::render($request, $e);
-		}	
+		}
 		return redirect('/')->with('error', 'Algo salió mal');
 	}
 

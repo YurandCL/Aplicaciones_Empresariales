@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Providers;
+<?php namespace GestorImagenes2\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

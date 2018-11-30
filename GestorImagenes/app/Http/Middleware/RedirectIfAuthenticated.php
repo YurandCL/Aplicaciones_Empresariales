@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Http\Middleware;
+<?php namespace GestorImagenes2\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -35,6 +35,8 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
+			//si en la ruta ponemos solo "/validado" no nos redirige a "/validacion/inicio"
+			//debemos estar logeados para que recien se pueda redirigir
 			return new RedirectResponse(url('/validado'));
 		}
 

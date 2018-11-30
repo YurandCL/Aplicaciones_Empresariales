@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Providers;
+<?php namespace GestorImagenes2\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'GestorImagenes\Commands', 'GestorImagenes\Handlers\Commands'
+				$command, 'GestorImagenes2\Commands', 'GestorImagenes2\Handlers\Commands'
 			);
 		});
 	}

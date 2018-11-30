@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes\Providers;
+<?php namespace GestorImagenes2\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'GestorImagenes\Services\Registrar'
+			'GestorImagenes2\Services\Registrar'
 		);
 	}
 

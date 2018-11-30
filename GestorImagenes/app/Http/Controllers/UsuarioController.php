@@ -1,10 +1,9 @@
-<?php namespace GestorImagenes\Http\Controllers;
+<?php namespace GestorImagenes2\Http\Controllers;
 
-use GestorImagenes\Http\Requests\EditarPerfilRequest;
-use Iliminate\Support\Facades\Auth;
+use GestorImagenes2\Http\Requests\EditarPerfilRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller {
-
 	/**
 	 * Create a new controller instance.
 	 *
@@ -14,29 +13,37 @@ class UsuarioController extends Controller {
 	{
 		$this->middleware('auth');
 	}
-	public function getEditarPerfil()
+
+	/**
+	 * Show the application dashboard to the user.
+	 *
+	 * @return Response
+	 */
+	public function getIndex()
 	{
+		return 'Mostrando Albumes del usuario';
+	}
+
+	public function getEditarPerfil(){
 		return view('usuario.actualizar');
 	}
+
 	public function postEditarPerfil(EditarPerfilRequest $request){
-
-
 		$usuario=Auth::user();
 		$nombre=$request->get('nombre');
 		$usuario->nombre=$nombre;
-		//print_r($usuario);
+
 		if ($request->has('password')) {
-			echo "asdfasd";
 			$usuario->password=bcrypt($request->get('password'));
 		}
 		if ($request->has('pregunta')) {
-			echo "asdfasdasdasda";
 			$usuario->pregunta=$request->get('pregunta');
 			$usuario->respuesta=$request->get('respuesta');
 		}
 		$usuario->save();
 		return redirect('/validado')->with('actualizado', 'Su perfil ha sido actualizado');
 	}
+	
 	public function missingMethod($parameters=array()){
 		abort(404);
 	}

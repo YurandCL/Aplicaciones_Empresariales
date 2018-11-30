@@ -1,4 +1,4 @@
-<?php namespace GestorImagenes;
+<?php namespace GestorImagenes2;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +22,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['id','nombre', 'email', 'password', 'pregunta', 'respuesta'];
+	protected $fillable = ['id', 'nombre', 'email', 'password', 'pregunta', 'respuesta'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -32,6 +32,6 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	protected $hidden = ['password', 'remember_token'];
 
 	public function albumes(){
-		return $this->hasMany('GestorImagenes\Album');
+		return $this->hasMany('GestorImagenes2\Album');
 	}
 }

@@ -1,7 +1,10 @@
-<?php namespace GestorImagenes\Http\Controllers;
+<?php namespace GestorImagenes2\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
+use GestorImagenes2\Album;
+use GestorImagenes2\Http\Requests\CrearAlbumRequest;
 
 class AlbumController extends Controller {
-
 	/**
 	 * Create a new controller instance.
 	 *
@@ -11,31 +14,53 @@ class AlbumController extends Controller {
 	{
 		$this->middleware('auth');
 	}
-	public function getIndex()
-	{
-		return 'Mostrando Albumes del usuario';
-	}
+
 	/**
 	 * Show the application dashboard to the user.
 	 *
 	 * @return Response
 	 */
+	public function getIndex()
+	{
+		$usuario=Auth::user();
+		$albumes=$usuario->albumes;
+		return view('albumes.mostrar',['albumes'=>$albumes]);
+	}
+
 	public function getCrearAlbum(){
-		return 'Formulario de crear Albumes';
+		return view('albumes.crear-album');
 	}
-	public function posCrearAlbum(){
-		return 'Almacenando Album';
+
+	public function postCrearAlbum(CrearAlbumRequest $request){
+		$usuario=Auth::user();
+		Album::create
+		(
+			[
+				'nombre' => $request->get('nombre'),
+				'descripcion'=>$request->get('descripcion'),
+				'usuario_id'=>$usuario->id,
+			]
+		);
+		return redirect('/validado/albumes')->with('creado', 'El álbum ha sido creado');
 	}
+
 	public function getActualizarAlbum(){
-		return 'Formulario de Actualizar Album';
+		return 'formulario de actualizar Album';
 	}
+
 	public function postActualizarAlbum(){
-		return 'Actualizando Album';
+		return 'actualizar Album';
 	}
+
 	public function getEliminarAlbum(){
-		return 'Formulario de eliminar Album';
+		return 'formulario de eliminar Album';
 	}
+
 	public function postEliminarAlbum(){
-		return 'Eliminando Album';
+		return 'eliminando Album';
+	}
+
+	public function missingMethod($parameters=array()){
+		abort(404);
 	}
 }

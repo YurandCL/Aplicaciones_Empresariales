@@ -16,9 +16,9 @@ class CrearTablaAlbumes extends Migration {
 		{
 			$table->increments('id');
 			$table->string('nombre');
-			$table->string('descripcion', 60);
-			$table->integer('usuario_id') -> unsigned();
-			$table->foreign('usuario_id')-> references('id') -> on('usuarios');
+			$table->string('descripcion');
+			$table->integer('usuario_id')->unsigned();
+			$table->foreign('usuario_id')->references('id')->on('usuarios');
 			$table->timestamps();
 		});
 	}

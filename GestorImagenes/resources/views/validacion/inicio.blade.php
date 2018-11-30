@@ -1,23 +1,15 @@
 @extends('app')
 
 @section('content')
-
-@if(Session::has('error'))
-	<div class="alert alert-danger">
-		<strong>Whoops|</strong>Al parecer algo esta mal.<br><br>
-		{{Session::get('error')}}
-	</div>
-@endif
-
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">Iniciar sesión</div>
+				<div class="panel-heading">Iniciar Sesión</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong>Al parecer algo está mal.<br><br>
+							<strong>Whoops!</strong> Al parecer algo está mal. inicio<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
@@ -26,11 +18,25 @@
 						</div>
 					@endif
 
+					@if (Session::has('csrf'))
+						<div class="alert alert-danger">
+							<strong>Whoops!</strong> Al parecer algo está mal.<br><br>
+							{{Session::get('csrf')}}
+						</div>
+					@endif
+
+					@if (Session::has('recuperada'))
+						<div class="alert alert-success">
+							<strong>Está hecho!</strong> Cambios realizados.<br><br>
+							{{Session::get('recuperada')}}
+						</div>
+					@endif
+
 					<form class="form-horizontal" role="form" method="POST" action="/validacion/inicio">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Correo Electronico</label>
+							<label class="col-md-4 control-label">Correo</label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
@@ -56,10 +62,10 @@
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary" style="margin-right: 15px;">
-									Iniciar Sesión
+									Iniciar Sesión.
 								</button>
 
-								<a href="/password/email">Olvidé mi contraseña</a>
+								<a href="/validacion/recuperar">Olvidé mi contraseña</a>
 							</div>
 						</div>
 					</form>

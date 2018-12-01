@@ -32,8 +32,7 @@ class FotoController extends Controller {
 	}
 
 	public function getCrearFoto(Request $request){
-		$id=$request->get('id');
-		//aqui debajo esta el error de redireccion
+		$id = $request->get('id');
 		return view('fotos.crear-foto',['id'=>$id]);
 	}
 
@@ -51,7 +50,7 @@ class FotoController extends Controller {
 				'album_id'=>$id,
 			]
 		);
-		return redirect("/validado/fotos?id=$id")->with('creada','La foto ha sido subida');
+		return redirect("/validado/fotos?id=$id")->with('creada','La foto ha sido agregada');
 	}
 
 	public function getActualizarFoto(){

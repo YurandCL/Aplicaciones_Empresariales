@@ -6,7 +6,7 @@
 	<div class="alert alert-success">
 		<p>El álbum ha sido creado</p>
 	</div>
-@endif
+@endif	
 
 <div class="container-fluid">
 	<p><a href="/validado/albumes/crear-album" class="btn btn-primary" role=button>Crear Álbum</a></p>

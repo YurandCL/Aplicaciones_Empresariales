@@ -1,0 +1,29 @@
+Vamos a modificar el al archivo "AlbumController" de tal forma que referenciemos la direccion hacia la vista para crear albumes, ver imagen (Lab6/imagenes/img1.png).
+
+Crearemos una vista con el nombre "crear-album.blade" y le copiaremos el código que tenemos en "/resources/views/usuario/actualizar.blade.php" luego lo modificaremos para que sea una vista para crear albumes, ver imagen (Lab6/imagenes/img2.png).
+
+Creamos un nuevo request con el nombre "CrearAlbumRequest", le añadiremos las reglas necesarias y lo vamos a referenciar en el archivo "/app/Http/Controllers/AlbumController.php", ver imagenes (Lab6/imagenes/img3.png - img4.png).
+
+Al archivo "AlbumController.php" lo modificaremos en su funcion "postCrearAlbum( )" para que pida los elementos nesesarios para la creacion de albumes y despues nos rediriga a la vista para mostrar albumes ver imagen (Lab6/imagenes/img5.png).
+
+Para que sea mas llamtiva la vista despues de crear el album modificaremos el archivo "/resources/views/albumes/mostrar.blade.php" para que nos muestre un mensaje de "Creado", ver imagen (Lab6/imagenes/img6.png).
+
+Verificamos que funcione correctamente asi que enraremos a nuestro proyecto y crearemos uno nuevo, ver imagenes (Lab6/imagenes/img7.png - img9.png).
+
+De la misma manera como hicimos esto para crear albumes, también lo haremos para crear fotos, así que iremos al archivo "FotoController" y modificaremos su funcion "getCrearFoto( )" para que nos rediriga a la vista para crear una, ver imagen (Lab6/imagenes/img10.png)
+
+Pasamos a modificar la funcion "getIndex( )" para que nos de el id del album ver imagen (Lab6/imagenes/img11.png)
+
+Para recepcionar el id que ha sido mandado entraremos a la vista "/fotos/mostrar.blade.php" y modificaremos de la siguiente manera, ver imagen (Lab6/imagenes/img12.png)
+
+Ahora crearemos un nuevo request de nombre "CrearFotoRequest" y lo modificaremos de tal forma que las reglas cambien a nuestra conveniencia, ver imagen (Lab6/imagenes/img13.png)
+
+Para que tengamos redireccion necesitamos que el archivo exista, por lo tanto vamos a crear en "/resources/views/fotos/crear-foto.blade.php" para hacernos mas facil el trabajo copiaremos el codigo  que tenemos en "/fotos/mostrar.blade.php" y lo modificaremos para que solo pida algunas cosas, ver imagen (Lab6/imagenes/img14.png).
+
+Volveremos al archivo "FotoController" y nuevamente modificaremos la función "getCrearFoto( )" para que nos pida un request como parámetro (debemos importarlo tambien junto a otra libreria llamada "Carbon") y asi nos de un id, ver imagen (Lab6/imagenes/img15.png - img16.png). 
+
+Pasamos a modificar la funcion "postCrear-Foto( )" para que nos de el id de la foto creada, el nombre, su descripción y depues de agregarla nos rediriga a la vista de fotos y nos muestre un mensaje que nos diga "la foto ha sido agregada", ver imagen (Lab6/imagenes/img17.png)
+
+En caso no nos quira aceptar estos archivos seguramente es porque no está habilitada la opción "extension=php_fileinfo.dll" que se encuentra en el archivo de configuracion de xampp o wamp, le quitaremos el comentario para que ya sea tomado y usado por Apache, ver imagen (Lab6/imagenes/img18.png - img19.png)
+
+Solo nos queda probar nuestro proyecto, asi que intentemos crear una foto, ver imagen (Lab6/imagenes/img20.png)

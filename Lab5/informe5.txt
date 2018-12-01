@@ -34,7 +34,7 @@ Vamos a hacer ahora que nuestras fotos tambien se puedan mostrar, y para ello ha
 
 En el archivo "FotoController" vamos a referenciar al request que acabamos de crear, al modelo de Album y Foto ver imagen (Lab5/imagenes/img18.png).
 
-En el Request vamos a configurar segun la siguiente imagen (Lab5/imagenes/img19.png).
+En el Request "MostrarFotoRequest" vamos a configurar segun la siguiente imagen (Lab5/imagenes/img19.png).
 
 Vamos a modificar el archivo "FotoController" para que nos pueda redirigir a la vista de las fotos, ver imágenes(Lab5/imagenes/img20.png - img21.png).
 

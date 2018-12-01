@@ -70,3 +70,14 @@ Verificamos que el archivo se haya creado satisfactoriamente, asi que nos dirigi
 
 Para que nuestro request funcione tiene que ser llamado por algun otro archivo, asi que volveremos al archivo "ValidacionController" y lo modificaremos de tal manera que quede de la siguiente manera, ver imagen (Lab4/imagenes/img41.png).
 
+Tambien debemos agregarle la importacion hacia dicho request ver imagen (Lab4/imagenes/img42.png).
+
+Para que los usuarios puedan recuperar su contraseña en caso se les olvide o alguna otra cosa, puedan recuperarla mediante el metodo "recuperar" que está en nuestro controlador de validacion "ValidacionController" para ello requerimos de un request para recuperar estas contraseñas, asi que abriremos nuestra consola enrutado a nuestro proyecto y como creamos el request de inicio crearemos ahora el request de recuperar. ver imagen (Lab4/imagenes/img43.png).
+
+Copiaremos el contenido de "IniciarSesionRequest" y modificaremos las reglas y modificaremos la funcion "authorize( )" para que retorne "true", ver imagenes (Lab4/imagenes/img44.png - img45.png).
+
+Importaremos usando "use" a nuestro request para recuperar contraseñas ver imagen (Lab4/imagenes/img46.png).
+
+Pasamos a modificar la funcion "postRecuperar( )" para que quede de mejor manera, ver imagen (Lab4/imagenes/img47.png).
+
+Para terminar vamos a modificar la vista de inicio de tal forma que nos queda de la siguiente manera, ver imagen (Lab4/imagenes/img48.png).

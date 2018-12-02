@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use GestorImagenes2\Album;
 use GestorImagenes2\Http\Requests\CrearAlbumRequest;
+use GestorImagenes2\Http\Requests\ActualizarAlbumRequest;
 
 class AlbumController extends Controller {
 	/**
@@ -44,12 +45,17 @@ class AlbumController extends Controller {
 		return redirect('/validado/albumes')->with('creado', 'El álbum ha sido creado');
 	}
 
-	public function getActualizarAlbum(){
-		return 'formulario de actualizar Album';
+	public function getActualizarAlbum($id){
+		$album = Album::find($id);
+		return view('albumes.actualizar-album',['album'=>$album]);	
 	}
 
-	public function postActualizarAlbum(){
-		return 'actualizar Album';
+	public function postActualizarAlbum(ActualizarAlbumRequest $request){
+		$album = Album::find($request->get('id'));
+		$album->nombre=$request->get('nombre');
+		$album->descripcion=$request->get('descripcion');
+		$album->save();
+		return redirect('/validado/albumes')->with('actualizado', 'El álbum se actualizó');
 	}
 
 	public function getEliminarAlbum(){

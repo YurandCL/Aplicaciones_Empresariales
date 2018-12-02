@@ -6,7 +6,14 @@
 	<div class="alert alert-success">
 		<p>El álbum ha sido creado</p>
 	</div>
-@endif	
+@endif
+
+@if(Session::has('actualizado'))
+	<div class="alert alert-success">
+		<strong>Hecho!</strong> Cambios realizados<br><br>
+		{{Session::get('actualizado')}}
+	</div>
+@endif
 
 <div class="container-fluid">
 	<p><a href="/validado/albumes/crear-album" class="btn btn-primary" role=button>Crear Álbum</a></p>
@@ -18,7 +25,8 @@
 					<div class="caption">
 						<h3>{{$album->nombre}}</h3>
 						<p>{{$album->descripcion}}</p>
-						<p><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role=button> Ver Fotos</a></p>
+						<p><a href="/validado/fotos?id={{$album->id}}" class="btn btn-primary" role=button>Ver Fotos</a></p>
+						<p><a href="/validado/albumes/actualizar-album/{{$album->id}}" class="btn btn-primary" role=button>Editar album</a></p>
 					</div>
 				</div>
 			</div>

@@ -13,6 +13,7 @@
 						<h3>{{$foto->nombre}}</h3>
 						<p>{{$foto->descripcion}}</p>
 					</div>
+					<p><a href="/validado/fotos/actualizar-foto/{{$foto->id}}" class="btn btn-primary" role=button>Editar Foto</a></p>
 				</div>
 			</div>
 		</div>

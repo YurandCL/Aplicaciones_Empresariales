@@ -4,7 +4,7 @@
 
 @if(Session::has('error'))
 	<div class="alert alert-danger">
-		<strong>Whoops!</strong> Al parecer algo está mal joven. bienvenida<br><br>
+		<strong>Whoops!</strong> Al parecer algo está mal joven.<br><br>
 		{{Session::get('error')}}
 	</div>
 @endif

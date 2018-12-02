@@ -1,17 +1,26 @@
 <?php namespace GestorImagenes2\Http\Requests;
 
 use GestorImagenes2\Http\Requests\Request;
+use GestorImagenes2\Album;
+use Illuminate\Support\Facades\Auth;
 
-class RecuperarContrasenaRequest extends Request {
+
+class ActualizarAlbumRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
-	 *	
+	 *
 	 * @return bool
 	 */
 	public function authorize()
 	{
-		return true;
+		$user=Auth::user();
+		$id=$this->get('id');
+		$album=$user->albumes()->find($id);
+		if ($album) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -22,10 +31,9 @@ class RecuperarContrasenaRequest extends Request {
 	public function rules()
 	{
 		return [
-			'email' => 'required|email|exists:usuarios,email',
-			'password' => 'required|min:6|confirmed',
-			'pregunta' => 'required',
-			'respuesta' => 'required',
+			'id'=>'required|exists:albumes,id',
+			'nombre'=>'required',
+			'descripcion'=>'required',
 		];
 	}
 

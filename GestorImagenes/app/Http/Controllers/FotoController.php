@@ -2,6 +2,7 @@
 
 use GestorImagenes2\Http\Requests\MostrarFotosRequest;
 use GestorImagenes2\Http\Requests\CrearFotoRequest;
+use GestorImagenes2\Http\Requests\ActualizarFotoRequest;
 use GestorImagenes2\Album;
 use GestorImagenes2\Foto;
 use Illuminate\Http\Request;
@@ -54,11 +55,27 @@ class FotoController extends Controller {
 	}
 
 	public function getActualizarFoto(){
-		return 'formulario de actualizar foto';
+		$foto=Foto::find($id);
+		return view('fotos.actualizar-foto',['foto' => $foto]);
 	}
 
-	public function postActualizarFoto(){
-		return 'actualizar foto';
+	public function postActualizarFoto(ActualizarFotoRequest $request){
+		$foto=Foto::find($request->get($id));
+		$foto->nombre=$request->get('nombre');
+		$foto->descripcion=$request-get('descripcion');
+		if ($request->hasFile('imagen')) {
+			$imagen=$request->file('imagen');
+			$ruta='/img/';
+			$nombre=sha1(Carbon::now()).".".$imagen->guessExtension();
+			$imagen->move(getcwd().$ruta,$nombre);
+			$rutaanterior=getcwd().$foto->ruta;
+			if (file_exists($rutaanterior)) {
+				unlink(realpath($rutaanterior));
+			}
+			$foto->ruta=$ruta.$nombre;
+		}
+		$foto->save();
+		return redirect("/validado/fotos?id=$foto->album_id")->with('editada', 'La foto fue editada');
 	}
 
 	public function getEliminarFoto(){

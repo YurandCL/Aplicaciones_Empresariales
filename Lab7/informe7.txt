@@ -1,0 +1,30 @@
+Crearemos la funcionalidad para editar nuestro Álbum, asi que vamos al archivo "AlbuumContrller", donde modificaremos la función "getActualizaraAlbum( )" para poder obetener su id y que nos redirija a la vista actualizar album, ver imagen (Lab7/imagenes/img1.png)
+
+Pasamos a crear la vista a la cual redirigirá la función anterior, para ello vamos a la carpeta "/resources/views/albumes" aqui dentro crearemos el archivo de nombre "actualizar-album.blade.php", para ahorrarnos trabajo copiaremos el contenido del archivo "/usuario/actualizar.blade.php" y despues  lo modificaremos de tal manera que quede de la siguiente manera, ver imagen (Lab7/imagenes/img2.png)
+
+Una vez terminamos las modificaciones nos dirigimos a la vista "/albumes/mostrar.blade.php" le añadiremos la redirección hacia la edición del album elegido, ver imagen (Lab7/imagenes/img3.png).
+
+Creamos un nuevo request con el nombre de "ActualizarAlbumRequest", lo editaremos en la funcion "authorize( )", para ello copiaremos la función que tiene el archivo "CrearFotoRequest" y le añadimos las importaciones necesarias, posteriormente nos dirigimos al controlador del album "AlbumController" y refrenciamos al request creado, ver imagenes (Lab7/imagenes/img4.png - img6.png).
+
+Modificaremos las reglas del request para que pida el id, nombre y su descripción todos estos campos deben ser requeridos, ver imagen (Lab7/imagenes/img7.png).
+
+Ahora vamos a modificar la funcion "postActualizarAlbum( )" que se encuentra en el archivo "AlbumController" para que actualize los campos y nos redirija a la vista de albumes, aparte que nos muestre un mensaje en caso se hayan guardado los cambios, ver imagen (Lab7/imagenes/img8.png).
+
+En la vista "/albumes/mostrar.blade.php" incluimos el codigo necesario para que verifique que se actualizó el album y nos muestre el mensaje de actualización ver imagen (Lab7/imagenes/img9.png).
+
+Pasaremos a verificar que los cambios se puedan realizar segun las acciones de edición, ver imagenes (Lab7/imagenes/img10.png - img12.png).
+
+Ahora modificaremos la funcion para editar una foto, así que nos dirigimos al archivo FotoController y nos ubicamos en la funcion "getActualizarFoto( )", añadiremos el id y retornamos la vista para actualizar una foto, ver imagen (Lab7/imagenes/img13.png).
+
+Crearemos una vista para la actualizacion de las fotos llamado "actualizar-foto.blade.php", copiaremos el codigo del archivo mostrar y lo modificaremos de la siguiente manera, ver imagen (Lab7/imagenes/img14.png).
+
+Para hacer que el usuario pueda ingresar a este formulario le daremos el enlace en la vista de mostrar fotos, le agregaremos el botón que los llevará a esto, ver imagen (Lab7/imagenes/img15.png).
+
+Creamos el request llamado "ActualizarFotoRequest" en la consola dirigida hacia nuestro proyecto, ver imagen (Lab7/imagenes/img16.png).
+
+Configuraremos el codigo de este archivo para que llame a "foto" y a "Auth"para poder pedir el id de la foto que se editará, tambien añadiremos las reglas necesarias, ver imagen (Lab7/imagenes/img17.png).
+
+Tambien debemos referenciar a este archivo en el controlador de las fotos "FotoController", ahora modificaremos la funcion "postEditarPerfil( )", ver imagenes (Lab7/imagenes/img18.png - img19.png).
+
+Ahora modificaremos la vista "/views/fotos/mostrar.blade.php" para que nos muestre un mensaje después de editar la foto, para  ello veremos la siguiente imagen (Lab7/imagenes/img20.png)
+

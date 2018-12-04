@@ -19,6 +19,7 @@
 					@endif
 
 					<form class="form-horizontal" role="form" method="POST" action="/validado/albumes/actualizar-album">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}" required>
 						<input type="hidden" name="id" value="{{ $album->id }}">
 
 						<div class="form-group">

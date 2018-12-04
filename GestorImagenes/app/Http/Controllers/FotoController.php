@@ -3,6 +3,7 @@
 use GestorImagenes2\Http\Requests\MostrarFotosRequest;
 use GestorImagenes2\Http\Requests\CrearFotoRequest;
 use GestorImagenes2\Http\Requests\ActualizarFotoRequest;
+use GestorImagenes2\Http\Requests\EliminarFotoRequest;
 use GestorImagenes2\Album;
 use GestorImagenes2\Foto;
 use Illuminate\Http\Request;
@@ -14,8 +15,7 @@ class FotoController extends Controller {
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
+	public function __construct(){
 		$this->middleware('auth');
 	}
 
@@ -24,8 +24,7 @@ class FotoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function getIndex(MostrarFotosRequest $request)
-	{
+	public function getIndex(MostrarFotosRequest $request){
 		$id=$request->get('id');
 		$album=Album::find($id);
 		$fotos=$album->fotos;
@@ -56,7 +55,8 @@ class FotoController extends Controller {
 
 	public function getActualizarFoto(){
 		$foto=Foto::find($id);
-		return view('fotos.actualizar-foto',['foto' => $foto]);
+		return "hola mndo";
+		//return view('fotos.actualizar-foto',['foto' => $foto]);
 	}
 
 	public function postActualizarFoto(ActualizarFotoRequest $request){
@@ -78,12 +78,15 @@ class FotoController extends Controller {
 		return redirect("/validado/fotos?id=$foto->album_id")->with('editada', 'La foto fue editada');
 	}
 
-	public function getEliminarFoto(){
-		return 'formulario de eliminar foto';
-	}
+	public function postEliminarFoto(EliminarFotoRequest $request){
+		$foto=Foto::find($request->get('id'));
+		$rutaanterior=getcwd().$foto->ruta;
 
-	public function postEliminarFoto(){
-		return 'eliminando foto';
+		if (file_exists($rutaanterior)) {
+			unlink(realpath($rutaanterior));
+		}
+		$foto->delete();
+		return redirect("/validado/fotos?id=$foto->album_id")->with('eliminada','La foto fue eliminada');
 	}
 
 	public function missingMethod($parameters=array()){

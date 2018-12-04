@@ -1,0 +1,17 @@
+Añadiremos la funcionalidad para que el usuario pueda eliminar sus albumes que ya no quisiera tener, entonces crearemos un nuevo request de nombre "EliminarAlbumRequest", ver imagen (Lab8/imagenes/img1.png).
+
+Modificaremos las funciones "authorize( )" y "rules( )" del request creado recientemente, de tal forma que solo solicite el id del album que se eliminará, ver imagen (Lab8/imagenes/img2.png).
+
+En el archivo "AlbumController" vamos a eliminar la funcion "getEliminarAlbum( )" y referenciaremos al nuevo request creado, y modificaremos la funcion "postEliminarAlbum( )" para que nos rediriga, después de cumplida la tarea, hacia la vista de albumes, ver imagen (Lab8/imagenes/img3.png).
+
+Ahora añadiremos en la vista de los albumes un mensaje que nos asegure que efectivamente se borró el album, ver imagen (Lab8/imagenes/img4.png).
+
+¡¡¡FALTA LA VERIFICACIÓN, TAMBIÉN ME REDIRIGE AL INICIO!!!
+
+Continuamos con la eliminacion de las fotos, de la misma manera borraremos la funcion "getEliminarFoto( )" de nuestro controlador de fotos, creamos el request correspondiente y lo modificamos para que nos pida el id de la foto seleccionada y mediante eso pueda ser eliminada del gestor, ver imagenes (Lab8/imagenes/img5.png - img7.png).
+
+Modificamos la función "postEliminarFoto( )" para que haga todo el proceso de eliminación y después nos rediriga a a la vista de fotos en la que estabamos antes, ver imagen (Lab8/imagenes/img8.png).
+
+Ingresamos a la vista para mostrar fotos y le añadimos la instrucción para que nos muestre un mensaje diciendonos que la foto ya se eliminó, ver imagen (Lab8/imagenes/img9.png).
+
+¡¡¡FALTA LA VERIFICACIÓN, TAMBIÉN ME REDIRIGE AL INICIO!!!

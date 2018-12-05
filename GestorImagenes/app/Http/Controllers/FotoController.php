@@ -53,13 +53,13 @@ class FotoController extends Controller {
 		return redirect("/validado/fotos?id=$id")->with('creada','La foto ha sido agregada');
 	}
 
-	public function getActualizarFoto(){
+	public function getActualizarFoto($id){
 		$foto=Foto::find($id);
-		return "hola mndo";
-		//return view('fotos.actualizar-foto',['foto' => $foto]);
+		return view('fotos.actualizar-foto',['foto' => $foto]);
 	}
 
 	public function postActualizarFoto(ActualizarFotoRequest $request){
+		return "hola Mundo";
 		$foto=Foto::find($request->get($id));
 		$foto->nombre=$request->get('nombre');
 		$foto->descripcion=$request-get('descripcion');
@@ -79,6 +79,7 @@ class FotoController extends Controller {
 	}
 
 	public function postEliminarFoto(EliminarFotoRequest $request){
+		return "hola mundo";
 		$foto=Foto::find($request->get('id'));
 		$rutaanterior=getcwd().$foto->ruta;
 

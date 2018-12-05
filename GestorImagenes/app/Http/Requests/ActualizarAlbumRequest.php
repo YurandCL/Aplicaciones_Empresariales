@@ -4,7 +4,6 @@ use GestorImagenes2\Http\Requests\Request;
 use GestorImagenes2\Album;
 use Illuminate\Support\Facades\Auth;
 
-
 class ActualizarAlbumRequest extends Request {
 
 	/**

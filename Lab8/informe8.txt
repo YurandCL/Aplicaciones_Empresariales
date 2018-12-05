@@ -6,12 +6,12 @@ En el archivo "AlbumController" vamos a eliminar la funcion "getEliminarAlbum( )
 
 Ahora añadiremos en la vista de los albumes un mensaje que nos asegure que efectivamente se borró el album, ver imagen (Lab8/imagenes/img4.png).
 
-¡¡¡FALTA LA VERIFICACIÓN, TAMBIÉN ME REDIRIGE AL INICIO!!!
+Verificamos que efectivamente nos borre los albumes, ver imagen (Lab8/imagenes/img5.png).
 
-Continuamos con la eliminacion de las fotos, de la misma manera borraremos la funcion "getEliminarFoto( )" de nuestro controlador de fotos, creamos el request correspondiente y lo modificamos para que nos pida el id de la foto seleccionada y mediante eso pueda ser eliminada del gestor, ver imagenes (Lab8/imagenes/img5.png - img7.png).
+Continuamos con la eliminacion de las fotos, de la misma manera borraremos la funcion "getEliminarFoto( )" de nuestro controlador de fotos, creamos el request correspondiente y lo modificamos para que nos pida el id de la foto seleccionada y mediante eso pueda ser eliminada del gestor, ver imagenes (Lab8/imagenes/img6.png - img8.png).
 
-Modificamos la función "postEliminarFoto( )" para que haga todo el proceso de eliminación y después nos rediriga a a la vista de fotos en la que estabamos antes, ver imagen (Lab8/imagenes/img8.png).
+Modificamos la función "postEliminarFoto( )" para que haga todo el proceso de eliminación y después nos rediriga a a la vista de fotos en la que estabamos antes, ver imagen (Lab8/imagenes/img9.png).
 
-Ingresamos a la vista para mostrar fotos y le añadimos la instrucción para que nos muestre un mensaje diciendonos que la foto ya se eliminó, ver imagen (Lab8/imagenes/img9.png).
+Ingresamos a la vista para mostrar fotos y le añadimos la instrucción para que nos muestre un mensaje diciendonos que la foto ya se eliminó, ver imagen (Lab8/imagenes/img10.png).
 
 ¡¡¡FALTA LA VERIFICACIÓN, TAMBIÉN ME REDIRIGE AL INICIO!!!

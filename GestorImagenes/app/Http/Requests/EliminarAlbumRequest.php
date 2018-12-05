@@ -3,7 +3,7 @@
 use GestorImagenes2\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
 
-class EliminarAlbumRequest; extends Request {
+class EliminarAlbumRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.

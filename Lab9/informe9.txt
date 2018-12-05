@@ -1,0 +1,13 @@
+Vamos a corregir y mejorar nuestras vistas de tal manera que se vea mejor para el usuario, para ello empezaremos por la vista principal, vamos a modificarla para que nos muestre como redirección a la pagina principal el nombre de nuestro proyecto, entraremos al archivo "/resources/views/app.blade.php" y lo modificamos, ver imagen (Lab9/imagenes/img1.png).
+
+Ahora modificamos el archivo "/resources/views/albumes/mostrar.blade.php", de tal manera que se parezca a la siguiente imagen, ver imagen (Lab9/imagenes/img2.png).
+
+Continuaremos con el archivo "/resources/views/fotos/mostrar.blade.php", y le agregaremos el siguiente codigo, ver imagen (Lab9/imagenes/img3.png).
+
+Hacemos esto solo para que la manera de mostrar los albumes y las imágenes sea mas ordenada y tenga mejor apariencia.
+
+Ahora vamos a mejorar la manera en como es que se borrarán las imágenes cuando borremos un album, ya que si bien los elimina de la base de datos, no los elimina del servidor, entonces para mejorar esto vamos al archivo "AlbumController",  una vez dentro buscaremos la funcion "postEliminarAlbum( )" y la modificaremos, ver imagen (Lab9/imagenes/img4.png).
+
+Pasamos a probar el funcionamiento correcto del sistema, entonces alimentaremos nuevamente nuestra base de datos, para ello abriremos nuestra consola dirigida hacia nuestro proyecto, y usaremos el siguiente código: "php artisan migrate:refresh -seed", lo más probable es que nos bote un error , ver imagen (Lab9/imagenes/img5.png).
+
+Como podemos notar, nosotros no tenemos la tabla denominada "users", en nuestro caso se llama "usuarios", entonces entraremos al archivo "GestorImagenes/database/migrations/create_users_table.php", y en su función "down( )" modificaremos "users" por "usuarios", con esto ya deberia correr sin problemas, ver imágenes (Lab9/imagenes/img6.png - img7.png).

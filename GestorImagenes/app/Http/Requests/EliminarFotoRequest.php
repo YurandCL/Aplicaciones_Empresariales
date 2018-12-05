@@ -4,7 +4,7 @@ use GestorImagenes2\Http\Requests\Request;
 use Iluminate\Support\Facades\Auth;
 use GestorImagenes2\Foto;
 
-class EliminarFotoRequest; extends Request {
+class EliminarFotoRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
